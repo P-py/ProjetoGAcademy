@@ -21,6 +21,9 @@ O projeto foi criado para colocar em prática os conhecimentos fundamentais de H
 
 # Deploy e demonstração
 
+[Vercel](https://projeto-g-academy.vercel.app/)
+[GitHub pages](https://p-py.github.io/ProjetoGAcademy/)
+
 # Histórico de versões
 * 0.0.1
     * Primeiro deploy
