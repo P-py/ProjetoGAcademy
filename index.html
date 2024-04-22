@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+</head>
+<body id="content">
+    <section class="container intro">
+        <div class="container_box">
+            <h1 class="container_title">Com o combo gAcademy+, você pode aproveitar o CS+ e o PlayerPass por um preço único.</h1>
+            <img src="./assets/gacademy_logo.png" alt="Logo Combo+" class="container_logo">
+            <a class="container_button" href="#">Assine por 12x de R$ 50,00*</a>
+            <a class="container_button button_secondary" href="#">Assine apenas o CS+</a>
+            <p class="container_warning">*O preço pode variar se a assinatura for concluída em outros planos</p>
+        </div>
+    </section>
+    <section class="container secondary">
+        <img src="./assets/plataformas.png" alt="Imagem que demonstra as multiplataformas do gAcademy+" class="secondary_image">
+        <div class="container_description">
+            <h2 class="container_title_secondary">Assita as aulas e melhor como player!</h2>
+            <p class="container_text">
+                As aulas e conteúdos são disponibilizados de maneira multiplataformas. A cada dia a biblioteca de conteúdos aumenta!
+                Com players cada vez melhores te ajudando a evoluir!
+            </p>
+        </div>
+    </section>
+    <section class="container secondary">
+        <div class="container_description">
+            <p class="container_text">
+                Só o gAcademy+ oferece o CS+ e o PlayerPass para você ter acesso a cursos de diversas funções, funcionalidades e utilitários
+                do CS2, além de ser habilitado para disputar todos os campeonatos dispobilizados e organizados pela plataforma.
+            </p>
+            <a href="#" class="container_button_small">Assine o gAcademy+</a>
+        </div>
+        <img src="./assets/telas.png" alt="" class="secondary_image">
+    </section>
+    <section class="container secondary">
+        <img src="./assets/Notebook.png" alt="" class="secondary_image">
+        <div class="container_description">
+            <h2 class="container_title_secondary">Baixe os cursos e demos</h2>
+            <p class="container_text">
+                Baixe e assista quando e onde quiser. Assim, seus favoritos estão sempre com você, até mesmo sem internet.
+            </p>
+        </div>
+    </section>
+    <section class="footer_devices">
+        <h2 class="footer_devices_title">
+            Disponível nos seus dispositivos favoritos.
+        </h2>
+        <ul class="footer_devices_list">
+            <li>
+                <img src="./assets/tv.png" alt="">
+                <h3 class="footer_devices_list_item">TV</h3>
+            </li>
+            <li>
+                <img src="./assets/computador.png" alt="">
+                <h3 class="footer_devices_list_item">PC</h3>
+            </li>
+            <li>
+                <img src="./assets/celular.png" alt="">
+                <h3 class="footer_devices_list_item">Celular</h3>
+            </li>
+        </ul>
+    </section>
+    <footer class="footer">
+        <img src="./assets/gacademy_logo.png" alt="" class="footer_logo">
+        <ul class="footer_list">
+            <li class="footer_list_link">
+                <a href="#">Idioma</a>
+            </li>
+            <li class="footer_list_link">
+                <a href="#">Dispositivos compatíveis</a>
+            </li>
+            <li class="footer_list_link">
+                <a href="#">Contrato de assinatura</a>
+            </li>
+            <li class="footer_list_link">
+                <a href="#">Política de privacidade</a>
+            </li>
+            <li class="footer_list_link">
+                <a href="#">Proteção de dados no Brasil</a>
+            </li>
+            <li class="footer_list_link">
+                <a href="#">Anúncios personalizados</a>
+            </li>
+            <li class="footer_list_link">
+                <a href="#">Ajuda</a>
+            </li>
+        </ul>
+        <p class="footer_warning">
+            ® 2024 Pedro Salviano. Direitos reservados. Serviço de assinatura paga. Conteúdo sujeito a disponibilidade.
+            <br>
+            Algumas imagens foram obtidas via curso da <a href="www.alura.com.br">www.alura.com.br</a>, outras através de <a href="www.gamesacademy.com.br">www.gamesacademy.com.br</a> 
+        </p>
+    </footer>
+</body>
+<script>
+    const content = document.querySelector("body").innerHTML
+    if(screen.height<900){
+        document.querySelector("body").innerHTML = `<p class="container_text">Esta página não está disponível para resoluções abaixo de 1600x900<p>`
+    }
+    function debounce(func, wait) {
+    let timeout;
+    return function () {
+        const context = this;
+        const args = arguments;
+        clearTimeout(timeout);
+        timeout = setTimeout(() => {
+        func.apply(context, args);
+        }, wait);
+    };
+    }
+    window.addEventListener(
+        "resize",
+        debounce(() => {
+            if(window.innerHeight<900){
+                document.querySelector("body").innerHTML = `<p class="container_text">Esta página não está disponível para resoluções abaixo de 1600x900<p>`
+            }
+            else{
+                document.querySelector("body").innerHTML = content
+            }
+        }, 250)
+    );
+</script>
+</html>
